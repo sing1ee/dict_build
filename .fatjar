@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Mon Sep 15 15:17:52 CST 2014
+onejar.license.required=true
+manifest.classpath=
+manifest.removesigners=true
+onejar.checkbox=false
+jarname=dict_build_fat.jar
+manifest.mergeall=true
+manifest.mainclass=
+manifest.file=<createnew>
+jarname.isextern=false
+onejar.expand=
+excludes=<jar|junit-3.8.1.jar>;<jar|externalsortinginjava-0.1.9.jar>;<jar|logback-classic-1.0.13.jar>;<jar|logback-core-1.0.13.jar>;<jar|slf4j-api-1.6.4.jar>;<jar|commons-logging-1.1.1.jar>;<jar|commons-cli-1.2.jar>;<jar|junit-4.11.jar>;<jar|hamcrest-core-1.3.jar>;<jar|jackson-mapper-asl-1.9.13.jar>;<jar|jackson-core-asl-1.9.13.jar>
+includes=
