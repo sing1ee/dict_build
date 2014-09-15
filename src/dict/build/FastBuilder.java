@@ -44,7 +44,7 @@ public class FastBuilder {
 		
 		TreeMap<String, double[]> prop = Maps.newTreeMap();
 		try {
-			List<String> lines = Files.readLines(new File("/Users/zhangcheng/Downloads/300w_words/pos_prop.txt"), Charsets.UTF_8);
+			List<String> lines = Files.readLines(new File("pos_prop.txt"), Charsets.UTF_8);
 			for (String l : lines) {
 				String[] seg = l.split("\t");
 				prop.put(seg[0], new double[]{Double.parseDouble(seg[1]), Double.parseDouble(seg[2]), Double.parseDouble(seg[3])});
@@ -135,8 +135,6 @@ public class FastBuilder {
 						.splitToList(line)) {
 					sen = reverse(sen.trim());
 					sen = "$" + sen + "$";
-					System.out.println(sen);
-					System.out.println(sen.length());
 					for (int i = 1; i < sen.length() - 1; ++i) {
 						writer.write(sen.substring(i, Math.min(maxLen + i,  sen.length())) + "\n");
 					}
@@ -238,8 +236,6 @@ public class FastBuilder {
 						.splitToList(line)) {
 					sen = sen.trim();
 					sen = "$" + sen + "$";
-					System.out.println(sen);
-					System.out.println(sen.length());
 					for (int i = 1; i < sen.length() - 1; ++i) {
 						writer.write(sen.substring(i, Math.min(maxLen + i,  sen.length())) + "\n");
 					}
