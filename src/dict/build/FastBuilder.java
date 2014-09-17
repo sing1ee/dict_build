@@ -40,6 +40,25 @@ public class FastBuilder {
 	
 	public final static String stopwords = "的很了么呢是嘛个都也比还这于不与才上用就好在和对挺去后没说";
 	
+	
+	/**
+	 * 输入的字符是否是汉字
+	 * @param a char
+	 * @return boolean
+	 */
+	public static boolean isChinese(char a) { 
+	     int v = (int)a; 
+	     return (v >=19968 && v <= 171941); 	
+	}
+	
+	public static boolean allChs(String s){
+		if (null == s || "".equals(s.trim())) return false;
+		for (int i = 0; i < s.length(); i++) {
+			if (!isChinese(s.charAt(i))) return false;
+		}
+		return true;
+	}
+	
 	public TreeMap<String, double[]> loadPosprop() {
 		
 		TreeMap<String, double[]> prop = Maps.newTreeMap();
@@ -134,6 +153,7 @@ public class FastBuilder {
 				for (String sen : Splitter.on(" ").omitEmptyStrings()
 						.splitToList(line)) {
 					sen = reverse(sen.trim());
+					if (!allChs(sen)) continue;
 					sen = "$" + sen + "$";
 					for (int i = 1; i < sen.length() - 1; ++i) {
 						writer.write(sen.substring(i, Math.min(maxLen + i,  sen.length())) + "\n");
@@ -235,6 +255,7 @@ public class FastBuilder {
 				for (String sen : Splitter.on(" ").omitEmptyStrings()
 						.splitToList(line)) {
 					sen = sen.trim();
+					if (!allChs(sen)) continue;
 					sen = "$" + sen + "$";
 					for (int i = 1; i < sen.length() - 1; ++i) {
 						writer.write(sen.substring(i, Math.min(maxLen + i,  sen.length())) + "\n");
