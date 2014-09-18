@@ -416,7 +416,9 @@ public class FastBuilder {
 		
 		TreeMap<String, double[]> posProp = this.loadPosprop();
 		
-		TreeMap<String, Integer> freq = new TreeMap<>();
+//		TreeMap<String, Integer> freq = new TreeMap<>();
+		
+		TernaryTree freq = new TernaryTree();
 
 		File ffile = new File(freqFile);
 		File efile = new File(entropyFile);
@@ -432,7 +434,7 @@ public class FastBuilder {
 			while (null != (line = fr.readLine())) {
 				String[] seg = line.split("\t");
 				if (seg.length < 3) continue;
-				freq.put(seg[0], Integer.parseInt(seg[1]));
+				freq.insert(seg[0], Integer.parseInt(seg[1]));
 				total += 1;
 			}
 			line = null;
@@ -450,9 +452,13 @@ public class FastBuilder {
 				for (int s = 1; s < w.length(); ++s) {
 					String lw = w.substring(0, s);
 					String rw = w.substring(s);
-					if (!freq.containsKey(lw) || !freq.containsKey(rw))
-						continue;
-					long ff = freq.get(lw) * freq.get(rw);
+					
+					int lf = freq.search(lw);
+					int rf = freq.search(rw);
+					
+					if (-1 == lf || -1 == rf) continue;
+					
+					long ff = lf * rf;
 					if (ff > max)
 						max = ff;
 				}
