@@ -495,31 +495,4 @@ public class FastBuilder {
 			e.printStackTrace();
 		}
 	}
-
-	public static void main(String[] args) {
-
-		FastBuilder builder = new FastBuilder();
-
-		String rawpath = builder.parse("/Users/zhangcheng/Downloads/comment/test/all.csv");
-//		String rawpath = "/Users/zhangcheng/Downloads/data/guba/raw_data.txt";
-//		String rawpath = "/Users/zhangcheng/Downloads/data/xiyouji/xiyou.txt";
-		
-//		String rawpath = "/Users/zhangcheng/Downloads/data/jinpingmei/jpm.txt";
-		//
-		String freqRight = builder.genFreqRight(rawpath, 6, 1024);
-		String left = builder.genLeft(rawpath, 6, 1024);
-		//
-		// String freqRight =
-		// "/Users/zhangcheng/Documents/workspace/python/meta_search/freq_ngram_sort.data";
-		// String left =
-		// "/Users/zhangcheng/Documents/workspace/python/meta_search/freq_ngram_left_sort.data";
-		
-//		String freqRight = "/Users/zhangcheng/Downloads/comment/test/freq_ngram_sort.data";
-//		String left = "/Users/zhangcheng/Downloads/comment/test/freq_ngram_left_sort.data";
-
-		String entropyfile = builder.mergeEntropy(freqRight, left);
-
-		builder.extractWords(freqRight, entropyfile);
-
-	}
 }
