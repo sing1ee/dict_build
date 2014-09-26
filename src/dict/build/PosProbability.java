@@ -27,7 +27,7 @@ public class PosProbability {
 	 */
 	public static void main(String[] args) throws FileNotFoundException, IOException {
 		
-		File dictFile = new File("/Users/zhangcheng/Downloads/300w_words/Freq/sogou.dic");
+		File dictFile = new File("sogou.dic");
 		File ppFile = new File(dictFile.getParentFile(), "pos_prop.txt");
 		try(BufferedReader br = Files.newReader(dictFile, Charsets.UTF_8);
 				BufferedWriter pw = Files.newWriter(ppFile, Charsets.UTF_8);
