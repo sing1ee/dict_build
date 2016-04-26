@@ -16,8 +16,11 @@ http://www.matrix67.com/blog/archives/5044
 4. ngram 频率
 
 ###运行方法
-见Main.java，输入参数为原始文本文件路径。
-输出为words_sort.data，抽取出来的词，可根据阈值进行调整。
+1. 下载或者gradle distTar打包程序
+2. 解压dict_build-x.x.x.tar
+3. 解压之后,进入bin. 运行:./dict_build 你的数据文件的绝对路径
+4. 结束之后,在数据文件同目录有文件:words_sort.data
+5. 四列分别为:词,词频,互信息,左右熵,位置成词概率.
 
 
 ###示例
