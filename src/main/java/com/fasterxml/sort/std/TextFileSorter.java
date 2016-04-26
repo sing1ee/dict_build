@@ -1,16 +1,13 @@
-package dict.build;
+package com.fasterxml.sort.std;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
+import java.io.*;
 
-import com.fasterxml.sort.SortConfig;
-import com.fasterxml.sort.Sorter;
+import com.fasterxml.sort.*;
 
 /**
  * Basic {@link Sorter} implementation that operates on text line input.
  */
-public class SplitFileSorter extends Sorter<String>
+public class TextFileSorter extends Sorter<byte[]>
 {
     /**
      * Let's limit maximum memory used for pre-sorting when invoked from command-line to be
@@ -24,15 +21,15 @@ public class SplitFileSorter extends Sorter<String>
      */
     public final static long MIN_HEAP_FOR_PRESORT = 10L * 1024 * 1024;
     
-    public SplitFileSorter() {
+    public TextFileSorter() {
         this(new SortConfig());
     }
     
-    public SplitFileSorter(SortConfig config)
+    public TextFileSorter(SortConfig config)
     {
         super(config,
-                LineReader.factory(), LineWriter.factory(),
-                new SplitStringComparator());
+                RawTextLineReader.factory(), RawTextLineWriter.factory(),
+                new ByteArrayComparator());
     }
 
     /*
@@ -45,7 +42,7 @@ public class SplitFileSorter extends Sorter<String>
     public static void main(String[] args) throws Exception
     {
         if (args.length > 1) {
-            System.err.println("Usage: java "+SplitFileSorter.class.getName()+" [input-file]");
+            System.err.println("Usage: java "+TextFileSorter.class.getName()+" [input-file]");
             System.err.println("(where input-file is optional; if missing, read from STDIN)");
             System.exit(1);
         }
@@ -59,7 +56,7 @@ public class SplitFileSorter extends Sorter<String>
         } else if (maxMem < MIN_HEAP_FOR_PRESORT) {
             maxMem = MIN_HEAP_FOR_PRESORT;
         }
-        final SplitFileSorter sorter = new SplitFileSorter(new SortConfig().withMaxMemoryUsage(maxMem));
+        final TextFileSorter sorter = new TextFileSorter(new SortConfig().withMaxMemoryUsage(maxMem));
         final InputStream in;
         
         if (args.length == 0) {

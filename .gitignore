@@ -10,8 +10,30 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
-<<<<<<< HEAD
 /bin
 /target
-=======
->>>>>>> d79479d7a81aac9271a63233b7b940ee03fb4f5e
+# idea IDE
+out
+.idea
+*.iml
+*.ipr
+*.iws
+*.ids
+
+#file
+*.pdf
+
+# eclipse IDE
+.classpath
+.project
+.settings
+
+# build
+.gradle
+build
+
+#mac
+.DS_Store
+
+#log
+logs

@@ -1,0 +1,26 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'application'
+
+group = 'build.dict'
+version = '0.0.2'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+mainClassName='dict.build.Main'
+
+repositories {
+    maven { url 'http://nexus.ufish.io/content/groups/public/' }
+}
+dependencies {
+    compile('com.google.guava:guava:17.0')
+    compile('com.google.code.externalsortinginjava:externalsortinginjava:0.1.9')
+    compile('ch.qos.logback:logback-classic:1.0.13')
+    compile('ch.qos.logback:logback-core:1.0.13')
+    compile('org.slf4j:slf4j-api:1.6.4')
+    compile('commons-logging:commons-logging:1.1.1')
+    compile('commons-cli:commons-cli:1.2')
+}

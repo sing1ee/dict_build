@@ -5,6 +5,10 @@
 
 http://www.matrix67.com/blog/archives/5044
 
+###new in 0.0.2
+1. 直接导入[java-merge-sort](https://github.com/cowtowncoder/java-merge-sort)源码, thx[@cowtowncoder](https://github.com/cowtowncoder)
+2. 将之前的maven项目，转变为一个gradle项目，方便打包使用。
+
 ###成词条件
 1. 互信息
 2. 左右熵
