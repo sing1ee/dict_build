@@ -16,7 +16,7 @@ http://www.matrix67.com/blog/archives/5044
 4. ngram 频率
 
 ###运行方法
-1. 下载或者gradle distTar打包程序
+1. [下载](https://github.com/sing1ee/dict_build/blob/master/dict_build-0.0.2.tar?raw=true)或者gradle distTar打包程序
 2. 解压dict_build-x.x.x.tar
 3. 解压之后,进入bin. 运行:./dict_build 你的数据文件的绝对路径
 4. 结束之后,在数据文件同目录有文件:words_sort.data
