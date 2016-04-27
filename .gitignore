@@ -30,7 +30,7 @@ out
 
 # build
 .gradle
-build
+/build
 
 #mac
 .DS_Store
