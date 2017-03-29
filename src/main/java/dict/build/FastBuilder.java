@@ -491,16 +491,14 @@ public class FastBuilder {
 			}
 			LOG.info("start to sort extracted words");
 			try {
-				long availMem = Runtime.getRuntime().maxMemory()
-						- (2048 * 1024 * 1024);
+				long availMem = Runtime.getRuntime().maxMemory() - (2048 * 1024 * 1024);
 				long maxMem = (availMem >> 1);
 				if (maxMem > MAX_HEAP_FOR_PRESORT) {
 					maxMem = MAX_HEAP_FOR_PRESORT;
 				} else if (maxMem < MIN_HEAP_FOR_PRESORT) {
 					maxMem = MIN_HEAP_FOR_PRESORT;
 				}
-				final SplitFileSorter sorter = new SplitFileSorter(
-						new SortConfig().withMaxMemoryUsage(maxMem));
+				final SplitFileSorter sorter = new SplitFileSorter(new SortConfig().withMaxMemoryUsage(maxMem));
 				sorter.sort(new FileInputStream(wfile), new PrintStream(wsfile));
 			} catch (IOException e) {
 				e.printStackTrace();
