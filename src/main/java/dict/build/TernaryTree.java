@@ -17,7 +17,7 @@ import java.util.StringTokenizer;
  * @author Middleware Services
  * @version $Revision$ $Date$
  */
-
+@Deprecated
 public class TernaryTree {
 
 	/** File system line separator. */

@@ -29,7 +29,7 @@ public class Builder {
 	 * Let's limit maximum memory used for pre-sorting when invoked from
 	 * command-line to be 256 megs
 	 */
-	public final static long MAX_HEAP_FOR_PRESORT = 256L * 1024 * 1024;
+	public final static long MAX_HEAP_FOR_PRESORT = 2048L * 1024 * 1024;
 
 	/**
 	 * Also just in case our calculations are wrong, require 10 megs for
@@ -73,7 +73,7 @@ public class Builder {
 	public void sortFile(File in, File out, Comparator<String> cmp) {
 		try {
 			long availMem = Runtime.getRuntime().maxMemory()
-					- (40 * 1024 * 1024);
+					- (2048 * 1024 * 1024);
 			long maxMem = (availMem >> 1);
 			if (maxMem > MAX_HEAP_FOR_PRESORT) {
 				maxMem = MAX_HEAP_FOR_PRESORT;

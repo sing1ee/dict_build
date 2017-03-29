@@ -1,5 +1,6 @@
 package dict.build;
 
+@Deprecated
 public class TernaryNode {
 
 	/** character of this node. */

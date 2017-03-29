@@ -13,7 +13,9 @@ targetCompatibility = 1.8
 mainClassName='dict.build.Main'
 
 repositories {
+    mavenLocal()
     maven { url 'http://nexus.ufish.io/content/groups/public/' }
+    mavenCentral()
 }
 dependencies {
     compile('com.google.guava:guava:17.0')
@@ -23,4 +25,5 @@ dependencies {
     compile('org.slf4j:slf4j-api:1.6.4')
     compile('commons-logging:commons-logging:1.1.1')
     compile('commons-cli:commons-cli:1.2')
+    compile('com.googlecode.concurrent-trees:concurrent-trees:2.6.0')
 }
