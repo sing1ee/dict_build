@@ -6,21 +6,25 @@
 http://www.matrix67.com/blog/archives/5044
 
 ###new in 0.0.3
+
 1. 使用radix tree代替ternary search tree，提升性能。
 2. 加入LOG信息，展示抽取的进度。
 
 
 ###new in 0.0.2
+
 1. 直接导入[java-merge-sort](https://github.com/cowtowncoder/java-merge-sort)源码, thx[@cowtowncoder](https://github.com/cowtowncoder)
 2. 将之前的maven项目，转变为一个gradle项目，方便打包使用。
 
 ###成词条件
+
 1. 互信息
 2. 左右熵
 3. 位置成词概率
 4. ngram 频率
 
 ###运行方法
+
 1. [下载](https://github.com/sing1ee/dict_build/blob/master/dict_build-0.0.2.tar?raw=true)或者gradle distTar打包程序
 2. 解压dict_build-x.x.x.tar
 3. 解压之后,进入bin. 运行:./dict_build 你的数据文件的绝对路径
