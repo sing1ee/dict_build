@@ -5,25 +5,25 @@
 
 http://www.matrix67.com/blog/archives/5044
 
-###new in 0.0.3
+### new in 0.0.3
 
 1. 使用radix tree代替ternary search tree，提升性能。
 2. 加入LOG信息，展示抽取的进度。
 
 
-###new in 0.0.2
+### new in 0.0.2
 
 1. 直接导入[java-merge-sort](https://github.com/cowtowncoder/java-merge-sort)源码, thx[@cowtowncoder](https://github.com/cowtowncoder)
 2. 将之前的maven项目，转变为一个gradle项目，方便打包使用。
 
-###成词条件
+### 成词条件
 
 1. 互信息
 2. 左右熵
 3. 位置成词概率
 4. ngram 频率
 
-###运行方法
+### 运行方法
 
 1. [下载](https://github.com/sing1ee/dict_build/blob/master/dict_build-0.0.2.tar?raw=true)或者gradle distTar打包程序
 2. 解压dict_build-x.x.x.tar
@@ -32,9 +32,9 @@ http://www.matrix67.com/blog/archives/5044
 5. 四列分别为:词,词频,互信息,左右熵,位置成词概率.
 
 
-###示例
+### 示例
 
-####《金瓶梅》抽取结果
+#### 《金瓶梅》抽取结果
 ```shell
 西门庆  4754    6.727920454563199   2.0315193024276885  0.17472535684926388
 月娘    1829    6.491853096329675   2.3714166640957095  0.22135096835144072
@@ -58,7 +58,7 @@ http://www.matrix67.com/blog/archives/5044
 王婆    284 7.1799090900149345  2.3129267619188907  0.3758007117437722
 ```
 
-####《西游记》抽取结果
+#### 《西游记》抽取结果
 ```shell
 八戒    1807    7.88874324889826    2.00952580557629    0.36441586280814575
 师父    1632    7.507794640198696   3.745294449785798   0.1371395690812608
