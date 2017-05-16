@@ -31,6 +31,7 @@ http://www.matrix67.com/blog/archives/5044
 4. 结束之后,在数据文件同目录有文件:words_sort.data
 5. 四列分别为:词,词频,互信息,左右熵,位置成词概率.
 
+### 注意：数据文件一定要是UTF8编码的
 
 ### 示例
 
