@@ -31,7 +31,15 @@ http://www.matrix67.com/blog/archives/5044
 4. 结束之后,在数据文件同目录有文件:words_sort.data
 5. 四列分别为:词,词频,互信息,左右熵,位置成词概率.
 
-### 注意：数据文件一定要是UTF8编码的
+### 注意
+
+- 数据文件一定要是UTF8编码的
+- 如果数据文件较大, 出现out of memory问题，可以尝试如下方式，限mac和linux，其中2G可以根据实际情况调整
+
+```shell
+export JAVA_OPTS=-Xmx2G
+./dict_build 你的数据文件的绝对路径
+```
 
 ### 示例
 
