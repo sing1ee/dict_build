@@ -51,6 +51,11 @@
 			<artifactId>commons-cli</artifactId>
 			<version>1.2</version>
 		</dependency>
+		<dependency>
+			<groupId>com.googlecode.concurrent-trees</groupId>
+			<artifactId>concurrent-trees</artifactId>
+			<version>2.6.0</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
@@ -58,8 +63,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.0</version>
 				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
+					<source>1.8</source>
+					<target>1.8</target>
 				</configuration>
 			</plugin>
 			<plugin>
