@@ -162,6 +162,7 @@ public class FastBuilder {
 					}
 				}
 			}
+			writer.close();
 			sortFile(ngramFile, ngramSort);
 
 			try(BufferedReader nsr = Files.newReader(ngramSort, Charsets.UTF_8)) {
@@ -216,6 +217,7 @@ public class FastBuilder {
 						}
 					}
 				}
+				freqWriter.close();
 			}
 			
 			sortFile(ngramfreq, ngramFreqSort);
@@ -264,6 +266,7 @@ public class FastBuilder {
 					}
 				}
 			}
+			writer.close();
 			System.out.println("gen sorting...");
 			sortFile(ngramFile, ngramSort);
 			
@@ -319,6 +322,7 @@ public class FastBuilder {
 						}
 					}
 				}
+				freqWriter.close();
 			}
 			
 			sortFile(ngramfreq, ngramfreqSort);
@@ -353,6 +357,7 @@ public class FastBuilder {
 			while (null != (line = lr.readLine())) {
 				mw.write(line + "\n");
 			}
+			mw.close();
 
 			sortFile(mergeTmp, mergeTmp2);
 
@@ -393,6 +398,7 @@ public class FastBuilder {
 				mf.write(seg1[0] + "\t" + freq + "\t" + e + "\n");
 
 			}
+			mf.close();
 
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -464,8 +470,8 @@ public class FastBuilder {
 					String rw = w.substring(s);
 					Integer lfObj = tree.getValueForExactKey(lw);
 					Integer rfObj = tree.getValueForExactKey(rw);
-					int lf = -1;
-					int rf = -1;
+					long lf = -1;
+					long rf = -1;
 					if (null != lfObj) {
 						lf = lfObj.intValue();
 					}
@@ -489,6 +495,7 @@ public class FastBuilder {
 				ww.write(w + "\t" + f + "\t" + pmi + "\t" + e + "\t"  + pp + "\n");
 
 			}
+			ww.close();
 			LOG.info("start to sort extracted words");
 			try {
 				long availMem = Runtime.getRuntime().maxMemory() - (2048 * 1024 * 1024);
