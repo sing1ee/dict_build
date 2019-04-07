@@ -64,7 +64,7 @@ public class FastBuilder {
 		TreeMap<String, double[]> prop = Maps.newTreeMap();
 		try {
             System.out.println(FastBuilder.class.getResourceAsStream("/pos_prop.txt"));
-            BufferedReader br = new BufferedReader(new InputStreamReader(this.getClass().getResourceAsStream("/pos_prop.txt")));
+            BufferedReader br = new BufferedReader(new InputStreamReader(this.getClass().getResourceAsStream("/pos_prop.txt"),"UTF-8"));
             String l = null;
             while (null != (l = br.readLine())) {
 				String[] seg = l.split("\t");

@@ -4,6 +4,7 @@ import java.io.*;
 import java.util.Arrays;
 
 import com.fasterxml.sort.*;
+import com.google.common.base.Charsets;
 
 /**
  * Efficient reader for data that consists of text lines, i.e. character
@@ -19,7 +20,7 @@ public class LineReader
     
     public LineReader(InputStream in)
     {
-        _br = new BufferedReader(new InputStreamReader(in));
+        _br = new BufferedReader(new InputStreamReader(in, Charsets.UTF_8));
     }
 
     /**
