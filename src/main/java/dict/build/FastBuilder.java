@@ -217,6 +217,23 @@ public class FastBuilder {
 						}
 					}
 				}
+				StringBuilder builder = new StringBuilder();
+							for (String w : stat.keySet()) {
+								CounterMap cm = stat.get(w);
+								int freq = 0;
+								double re = 0;
+								for (String k : cm.countAll().keySet()) {
+									freq += cm.get(k);
+								}
+								for (String k : cm.countAll().keySet()) {
+									double p = cm.get(k) * 1.0 / freq;
+									re += -1 * Math.log(p) / Math.log(2) * p;
+								}
+								builder.append(reverse(w)).append("\t").append(re).append("\n");
+							}
+							freqWriter.write(builder.toString());
+							stat.clear();
+				
 				freqWriter.close();
 			}
 			
@@ -322,6 +339,22 @@ public class FastBuilder {
 						}
 					}
 				}
+				StringBuilder builder = new StringBuilder();
+							for (String w : stat.keySet()) {
+								CounterMap cm = stat.get(w);
+								int freq = 0;
+								double re = 0;
+								for (String k : cm.countAll().keySet()) {
+									freq += cm.get(k);
+								}
+								for (String k : cm.countAll().keySet()) {
+									double p = cm.get(k) * 1.0 / freq;
+									re += -1 * Math.log(p) / Math.log(2) * p;
+								}
+								builder.append(w).append("\t").append(freq).append("\t").append(re).append("\n");
+							}
+							freqWriter.write(builder.toString());
+							stat.clear();
 				freqWriter.close();
 			}
 			
