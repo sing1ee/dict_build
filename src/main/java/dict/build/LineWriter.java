@@ -3,6 +3,7 @@ package dict.build;
 import java.io.*;
 
 import com.fasterxml.sort.*;
+import com.google.common.base.Charsets;
 
 public class LineWriter
     extends DataWriter<String>
@@ -12,7 +13,7 @@ public class LineWriter
 
 
     public LineWriter(OutputStream out) {
-    	_out = new BufferedWriter(new OutputStreamWriter(out));
+    	_out = new BufferedWriter(new OutputStreamWriter(out,Charsets.UTF_8));
     }
 
 
