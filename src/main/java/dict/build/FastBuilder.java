@@ -471,12 +471,15 @@ public class FastBuilder {
 
 			String line = null;
 			long total = 0;
+			long epoch = 0;
 			while (null != (line = fr.readLine())) {
 				String[] seg = line.split("\t");
 				if (seg.length < 3) continue;
 				tree.put(seg[0], Integer.parseInt(seg[1]));
-				total += 1;
-				if (total % 1000 == 0) {
+				epoch += 1;
+				//all single char's frequency
+				if(seg[0].length()<2) total += Integer.parseInt(seg[1]);
+				if (epoch % 1000 == 0) {
 					LOG.info("load freq to radix tree done: " + total);
 				}
 			}
