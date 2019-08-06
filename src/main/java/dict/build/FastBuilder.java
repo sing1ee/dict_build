@@ -479,7 +479,7 @@ public class FastBuilder {
 				epoch += 1;
 				//all single char's frequency
 				if(seg[0].length()<2) total += Integer.parseInt(seg[1]);
-				if (total % 1000 == 0) {
+				if (epoch % 1000 == 0) {
 					LOG.info("load freq to radix tree done: " + total);
 				}
 			}
