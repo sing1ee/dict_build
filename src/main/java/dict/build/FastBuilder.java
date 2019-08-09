@@ -48,7 +48,7 @@ public class FastBuilder {
 	 */
 	public static boolean isChinese(char a) { 
 	     int v = (int)a; 
-	     return (v >=19968 && v <= 171941); 	
+	     return (v >=19968 && v <= 40869);  //  [0x4e00, 0x29fa5]	
 	}
 	
 	public static boolean allChs(String s){
